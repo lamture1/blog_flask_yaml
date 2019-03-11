@@ -1,0 +1,22 @@
+#
+# Test Case 2: patch an article
+test_name: Test Case 2 patch an article
+
+includes:
+
+stages:
+  - name: Patch an article
+    request:
+      url: http://localhost:5000/Article
+      auth:
+        - 'UID-TC-1'
+        - 'Test@'
+      json:
+        artid: 6
+        title: Project 1 blog for test PATCH
+        content: I am patching an old article for testing.
+      method: PATCH
+      headers:
+        content-type: application/json
+    response:
+      status_code: 201

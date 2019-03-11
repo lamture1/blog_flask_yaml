@@ -1,0 +1,23 @@
+---
+#  User Microservice testing
+#
+# Test Case 1: Test new user is created
+#
+test_name: Test Case 1 Test new  user is created
+
+includes:
+
+stages:
+  - name: Make sure you can add user without Authentication
+    request:
+      url: http://localhost:5000/User
+      json:
+        uid: UID-TC-1
+        pwd: Test@
+        fname: Nandkishor
+        lname: Lamture
+      method: POST
+      headers:
+        content-type: application/json
+    response:
+      status_code: 201

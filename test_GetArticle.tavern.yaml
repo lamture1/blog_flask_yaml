@@ -1,0 +1,20 @@
+# Test Case 4: Select n articles
+
+test_name: Test Case 4 Select n articles
+
+includes:
+
+stages:
+  - name: Select n articles
+    request:
+      url: http://localhost:5000/Article
+      auth:
+        - 'UID-TC-1'
+        - 'Test@'
+      json:
+        n: 5
+      method: GET
+      headers:
+        content-type: application/json
+    response:
+      status_code: 201

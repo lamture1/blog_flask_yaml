@@ -1,0 +1,20 @@
+# Test Case 3: Test other user is not allowed to deleting someone else's account
+
+test_name: Test Case 3 user new password
+
+includes:
+
+stages:
+  - name: Update user password
+    request:
+      url: http://localhost:5000/User
+      auth:
+        - 'UID-TC-1'
+        - 'Test@'
+      json:
+        - npwd = newpwd
+      method: PATCH
+      headers:
+        content-type: application/json
+    response:
+      status_code: 201

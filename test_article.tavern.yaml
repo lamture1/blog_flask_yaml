@@ -1,0 +1,21 @@
+#
+# Test Case 1: Add new article
+test_name: Test Case 1 Add new article
+
+includes:
+
+stages:
+  - name: Add a new article
+    request:
+      url: http://localhost:5000/Article
+      auth:
+        - 'UID-TC-1'
+        - 'Test@'
+      json:
+        title: Project 1 blog for testing
+        content: This is a new article for the project. Test the new article
+      method: POST
+      headers:
+        content-type: application/json
+    response:
+      status_code: 201

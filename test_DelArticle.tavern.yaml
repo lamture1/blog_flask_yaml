@@ -1,0 +1,20 @@
+# Test Case 3: Delete an article
+
+test_name: Test Case 3 Delete an article
+
+includes:
+
+stages:
+  - name: Delete an Article
+    request:
+      url: http://localhost:5000/Article
+      auth:
+        - 'UID-TC-1'
+        - 'Test@'
+      json:
+        artid: 6
+      method: DELETE
+      headers:
+        content-type: application/json
+    response:
+      status_code: 201

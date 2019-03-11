@@ -1,0 +1,18 @@
+# Test Case 2: Delete user's own account
+
+test_name: Test Case 2 Delete user
+
+includes:
+
+stages:
+  - name: Delete user
+    request:
+      url: http://localhost:5000/User
+      auth:
+        - 'UID-TC-1'
+        - 'Test@'
+      method: DELETE
+      headers:
+        content-type: application/json
+    response:
+      status_code: 201
