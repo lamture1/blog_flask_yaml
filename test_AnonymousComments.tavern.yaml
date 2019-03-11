@@ -1,0 +1,18 @@
+#
+# Test Case: Add new anonymous comments to the article
+test_name: Add new anonymous comments to the article
+
+includes:
+
+stages:
+  - name: Add new anonymous comments to the article
+    request:
+      url: http://localhost:5000/Comments
+      json:
+        title: Project 1 blog for testing
+        content: This is a new article for the project. Test the new article
+      method: POST
+      headers:
+        content-type: application/json
+    response:
+      status_code: 201
